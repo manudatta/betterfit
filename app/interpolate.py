@@ -95,6 +95,7 @@ def interpolate_and_post(current: ProductSales, prev: ProductSales) -> None:
     ProductSales(delta=5, total=15, date=1 day ago, product_id=9)
     6 + 5 adds up to 11, could have been in a different order so long as the totals for each day are correct
     """
+    assert current.date > prev.date
     results = get_interpolated_list(current, prev)
     json_payload = [obj.to_json() for obj in results]
     return requests.post(api_url, json=json_payload)

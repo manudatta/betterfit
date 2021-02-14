@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.interpolate_and_post import (
+from app.interpolate import (
     get_missing_days,
     allocate,
     get_interpolated_list,
